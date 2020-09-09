@@ -1,0 +1,20 @@
+{
+    "name": "chelout/email-validator",
+    "description": "Simple Email Validator",
+    "type": "library",
+    "require": {
+        "php": "^7.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Viacheslav Ostrovskiy",
+            "email": "chelout@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Chelout\\": "src/Chelout"
+        }
+    }
+}
