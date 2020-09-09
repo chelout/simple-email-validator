@@ -1,5 +1,5 @@
 {
-    "name": "chelout/email-validator",
+    "name": "chelout/simple-email-validator",
     "description": "Simple Email Validator",
     "type": "library",
     "require": {
