@@ -3,7 +3,8 @@
     "description": "Simple Email Validator",
     "type": "library",
     "require": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "ext-intl": "*"
     },
     "license": "MIT",
     "authors": [
