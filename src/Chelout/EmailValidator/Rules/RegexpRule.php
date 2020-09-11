@@ -9,10 +9,10 @@ class RegexpRule implements RuleContract
     public function isValid(string $email): bool
     {
         if (preg_match(static::$pattern, $email, $matches) === false) {
-            throw new \Exception('Error occurred.');
+            return false;
         }
 
-        return $email === $matches[0];
+        return ! empty($matches) && $email === $matches[0];
     }
 
     public function getError(): string
