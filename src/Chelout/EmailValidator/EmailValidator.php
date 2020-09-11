@@ -2,6 +2,8 @@
 
 namespace Chelout\EmailValidator;
 
+use Chelout\EmailValidator\Exceptions\MustImplementRuleContract;
+use Chelout\EmailValidator\Exceptions\RulesArrayIsEmpty;
 use Chelout\EmailValidator\Rules\RuleContract;
 
 class EmailValidator
@@ -10,15 +12,23 @@ class EmailValidator
 
     protected array $errors = [];
 
+    /**
+     * EmailValidator constructor.
+     *
+     * @param  array  $rules
+     *
+     * @throws \Chelout\EmailValidator\Exceptions\MustImplementRuleContract
+     * @throws \Chelout\EmailValidator\Exceptions\RulesArrayIsEmpty
+     */
     public function __construct(array $rules)
     {
         if (empty($rules)) {
-            throw new \Exception('Rules array is empty.');
+            throw new RulesArrayIsEmpty();
         }
 
         foreach ($rules as $rule) {
             if (! $rule instanceof RuleContract) {
-                throw new \Exception('Every rule must implement `RuleContract` interface.');
+                throw new MustImplementRuleContract();
             }
         }
 
